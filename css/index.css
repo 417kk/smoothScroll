@@ -52,3 +52,68 @@ _0*. ***
 /* -----------------------------------------------------------------------------------
 _00. common
 ----------------------------------------------------------------------------------- */
+[class*="block"] {
+	height: 50vh;
+	width: 100%;
+	padding: 60px;
+}
+
+.block00 {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	-o-justify-content: center;
+	align-items: center;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+
+.anchor {
+	margin-top: 30px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.anchor__item {
+	margin-right: 5vw;
+}
+.anchor__item a {
+	border-radius: 10px;
+	border: 1px solid #111;
+	padding: 10px 30px;
+	display: block;
+}
+
+.block01 {
+	background: #f1f1f1;
+}
+.block02 {
+	background: #e1e1e1;
+}
+.block03 {
+	background: #d1d1d1;
+}
+.block04 {
+	background: #c1c1c1;
+}
+.block05 {
+	background: #b1b1b1;
+}
+.block06 {
+	background: #a1a1a1;
+}
