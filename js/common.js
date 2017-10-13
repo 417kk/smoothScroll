@@ -153,7 +153,7 @@ $(function(){
 // anchor link
 ---------------------------------------------------------------------------------------------------- */
 /* anchor */
-$(window).on('load resize', function() {
+$(window).on('load', function() {
 	var url = $(location).attr('href');
 	var h = 111;
 	var fixH = 51;
