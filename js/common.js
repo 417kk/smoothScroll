@@ -155,12 +155,14 @@ $(function(){
 /* anchor */
 $(window).on('load resize', function() {
 	var url = $(location).attr('href');
+	var h = 111;
+	var fixH = 51;
 
 	/*external links*/
 	if(url.indexOf('/#') != -1){
 		var id = url.split('/#');
 		var $target = $('#' + id[id.length - 1]);
-		var headerHeight = ($target.offset().top > 111) ? 51 : 111;
+		var headerHeight = ($target.offset().top > h) ? fixH : h;
 		if($target.length){
 			var pos = $target.offset().top - headerHeight;
 			$("html, body").animate({scrollTop:pos}, 1);
@@ -172,7 +174,7 @@ $(window).on('load resize', function() {
 		var href = $(this).attr('href');
 		var id = href.split('#');
 		var $target = $('#' + id[id.length - 1]);
-		var headerHeight = ($target.offset().top > 111) ? 51 : 111;
+		var headerHeight = ($target.offset().top > h) ? fixH : h;
 		if($target.length){
 			var pos = $target.offset().top - headerHeight;
 			$("html, body").animate({
@@ -182,3 +184,4 @@ $(window).on('load resize', function() {
 		}
 	});
 });
+

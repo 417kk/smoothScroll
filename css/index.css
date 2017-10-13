@@ -92,6 +92,9 @@ _00. common
 .anchor__item {
 	margin-right: 5vw;
 }
+.anchor__item:last-child {
+	margin-right: 0;
+}
 .anchor__item a {
 	border-radius: 10px;
 	border: 1px solid #111;
