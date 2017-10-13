@@ -6,10 +6,16 @@ Overview
 ## Description
 ヘッダー固定されてるサイトのアンカーリンクがずれるのを直すjsです
 
+## Demo
+
+## VS.
+
+## Requirement
+
 ## Usage
 変数hにブラウジング時のヘッダーの高さ。  
 変数fixHにスクロール後に変化したヘッダーの高さを入れてください。  
-変化しない場合などは適宜編集して使ってください。  
+変化しない場合などは適宜編集して使ってください。
 
 	$(window).on('load resize', function() {
 		var url = $(location).attr('href');
@@ -44,4 +50,7 @@ Overview
 	});
 
 
+## License
+
+[MIT](https://raw.githubusercontent.com/417kk/anchorScroll-fixedHeader/master/LICENSE)
 
