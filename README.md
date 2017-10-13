@@ -9,7 +9,7 @@
 変数fixHにスクロール後に変化したヘッダーの高さを入れてください。  
 スクロールしてもヘッダーの高さが変化しない場合などは適宜編集して使ってください。
 
-	$(window).on('load resize', function() {
+	$(window).on('load', function() {
 		var url = $(location).attr('href');
 		var h = 111;
 		var fixH = 51;
