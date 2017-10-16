@@ -1,5 +1,6 @@
 ﻿## Description
-ヘッダー固定されてるサイトのアンカーリンクがずれるのを直すjsです
+ヘッダー固定されてるサイトのアンカーリンクがずれるのを直すjsです  
+動的なリサイズには対応してません
 
 ## Demo
 [デモ](https://417kk.github.io/anchorScroll-fixedHeader/)
@@ -11,7 +12,8 @@
 
 	$(window).on('load', function() {
 		var url = $(location).attr('href');
-		var h = 111;
+		var window_width = $(window).width();
+		var h = (window_width < 768) ? 51 : 111;
 		var fixH = 51;
 
 		/*external links*/
