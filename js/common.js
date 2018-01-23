@@ -154,30 +154,32 @@ $(function(){
 ---------------------------------------------------------------------------------------------------- */
 /* anchor */
 $(window).on('load', function() {
+	var a, b;
+	a = 48; //sp height
+	b = 111; // pc height
+
 	var url = $(location).attr('href');
 	var window_width = $(window).width();
-	var h = (window_width < 992) ? 51 : 111;
-	var fixH = 51;
+	var h = (window_width < 992) ? a : b;
 
 	/*external links*/
-	if(url.indexOf('/#') != -1){
-		var id = url.split('/#');
+	if(url.indexOf('#') != -1){
+		var id = url.split('#');
 		var $target = $('#' + id[id.length - 1]);
-		var headerHeight = ($target.offset().top > h) ? fixH : h;
 		if($target.length){
-			var pos = $target.offset().top - headerHeight;
-			$("html, body").animate({scrollTop:pos}, 1);
+			var pos = $target.offset().top - h;
+			$("html, body").animate({scrollTop:pos}, 0.1);
 		}
 	}
 
 	/*internal links*/
 	$('a[href*="#"]').on('click', function() {
+		window_width = $(window).width();
 		var href = $(this).attr('href');
 		var id = href.split('#');
 		var $target = $('#' + id[id.length - 1]);
-		var headerHeight = ($target.offset().top > h) ? fixH : h;
 		if($target.length){
-			var pos = $target.offset().top - headerHeight;
+			var pos = $target.offset().top - h;
 			$("html, body").animate({
 				scrollTop:pos
 			}, 600, 'easeInOutQuart');
