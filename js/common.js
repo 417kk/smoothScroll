@@ -154,13 +154,15 @@ $(function(){
 ---------------------------------------------------------------------------------------------------- */
 /* anchor */
 $(window).on('load', function() {
-	var a, b;
+	var a, b, c, d;
 	a = 48; //sp height
 	b = 111; // pc height
+	c = 992; // break point
+	d = $('#l-header'); // header element
 
 	var url = $(location).attr('href');
 	var window_width = $(window).width();
-	var h = (window_width < 992) ? a : b;
+	var h = (window_width < c) ? a : b;
 
 	/*external links*/
 	if(url.indexOf('#') != -1){
@@ -174,12 +176,12 @@ $(window).on('load', function() {
 
 	/*internal links*/
 	$('a[href*="#"]').on('click', function() {
-		window_width = $(window).width();
 		var href = $(this).attr('href');
 		var id = href.split('#');
 		var $target = $('#' + id[id.length - 1]);
+		var marginTop = d.outerHeight();
 		if($target.length){
-			var pos = $target.offset().top - h;
+			var pos = $target.offset().top - marginTop;
 			$("html, body").animate({
 				scrollTop:pos
 			}, 600, 'easeInOutQuart');
