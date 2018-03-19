@@ -159,6 +159,7 @@ $(window).on('load', function() {
 	b = 111; // pc height
 	c = 992; // break point
 	d = $('#l-header'); // header element
+	e = 0; // if translateY animation
 
 	var url = $(location).attr('href');
 	var window_width = $(window).width();
@@ -169,8 +170,8 @@ $(window).on('load', function() {
 		var id = url.split('#');
 		var $target = $('#' + id[id.length - 1]);
 		if($target.length){
-			var pos = $target.offset().top - h;
-			$("html, body").animate({scrollTop:pos}, 0.1);
+			var pos = $target.offset().top - h - e;
+			$("html, body").animate({scrollTop:pos}, 100);
 		}
 	}
 
