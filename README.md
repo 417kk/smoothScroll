@@ -8,7 +8,9 @@
 aにSP時のヘッダーの高さ。  
 bにPC時のヘッダーの高さ。  
 cにブレイクポイントの値。  
-dにヘッダーの要素を入れてください。  
+dにヘッダーの要素名。  
+eにスクロールインのアニメーションでフェードインする場合にずらしている高さを入れてください(translateYの値です)。
+固定していない。またはスクロールアニメーションを入れてないなどの場合はそれぞれの変数に0を入れてください。    
 
 **[注意]  
 jquery.easing.jsを使っているので先にそちらを読み込んでからこのjsを設置してください。**  
@@ -16,6 +18,7 @@ jquery.easing.jsを使っているので先にそちらを読み込んでから�
 [出来ないこと]  
 1.リキッドでヘッダーの高さが変わるような仕様には対応してません。  
 2.上記とかぶりますが、スクロールしてヘッダーの高さが変わるような仕様にも対応してません。  
+3.ページ外リンクで設定している100secは仕様でこれ以下に設定できません。
 
 	$(window).on('load', function() {
 		var a, b, c, d;
@@ -33,8 +36,8 @@ jquery.easing.jsを使っているので先にそちらを読み込んでから�
 			var id = url.split('#');
 			var $target = $('#' + id[id.length - 1]);
 			if($target.length){
-				var pos = $target.offset().top - h;
-				$("html, body").animate({scrollTop:pos}, 0.1);
+				var pos = $target.offset().top - h - e;
+				$("html, body").animate({scrollTop:pos}, 100);
 			}
 		}
 
