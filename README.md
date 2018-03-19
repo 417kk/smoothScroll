@@ -26,6 +26,7 @@ jquery.easing.jsを使っているので先にそちらを読み込んでから�
 		b = 111; // pc height
 		c = 992; // break point
 		d = $('#l-header'); // header element
+		e = 0; // if translateY animation
 
 		var url = $(location).attr('href');
 		var window_width = $(window).width();
