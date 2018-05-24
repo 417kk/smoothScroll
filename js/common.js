@@ -159,6 +159,7 @@ $(window).on('load', function() {
 	b = 111; // pc height
 	c = 992; // break point
 	d = $('#l-header'); // header element
+<<<<<<< HEAD
 	e = 0; // if translateY animation
 
 	var url = $(location).attr('href');
@@ -172,22 +173,61 @@ $(window).on('load', function() {
 		if($target.length){
 			var pos = $target.offset().top - h - e;
 			$("html, body").animate({scrollTop:pos}, 100);
+=======
+	e = 0; // translateY animation
+
+	var window_width = window.innerWidth;
+	var h = (window_width < c) ? a : b;
+
+	var dirArr = location.href.split("/");
+	var dir = dirArr[dirArr.length -2];
+
+	/*external links*/
+	if(localStorage.getItem('anchor') != -1){
+		var id = localStorage.getItem('anchor');
+		var $target = $('#' + id);
+		if($target.length){
+			var pos = $target.offset().top - h - e;
+			$("html, body").animate({scrollTop:pos}, 10);
+>>>>>>> release/201805241713
 		}
 	}
+
 
 	/*internal links*/
 	$('a[href*="#"]').on('click', function() {
 		var href = $(this).attr('href');
+<<<<<<< HEAD
 		var id = href.split('#');
 		var $target = $('#' + id[id.length - 1]);
 		var marginTop = d.outerHeight();
 		if($target.length){
+=======
+
+		var idArr = href.split('#');
+		var id = idArr[idArr.length - 1];
+
+		var linkArr = href.split('/');
+		var linkDir = linkArr[linkArr.length - 2];
+
+		var $target = $('#' + id);
+		var marginTop = d.outerHeight();
+
+		if (dir == linkDir || linkDir == undefined) {
+>>>>>>> release/201805241713
 			var pos = $target.offset().top - marginTop;
 			$("html, body").animate({
 				scrollTop:pos
 			}, 600, 'easeInOutQuart');
 			return false;
+		} else {
+			localStorage.setItem('anchor', id);
+			location.href = idArr[idArr.length - 2];
+			return false;
 		}
 	});
-});
 
+	/* initialize */
+	localStorage.removeItem('anchor');
+
+});
