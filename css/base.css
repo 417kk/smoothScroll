@@ -216,18 +216,11 @@ a[data-lightbox="lb"]:after {
   transition-timing-function: cubic-bezier(.25,.74,.22,.99);
 }
 
-#l-header.is-fixed {
-  padding: 15px;
-}
-
 
 /* PC */
 @media (min-width: 992px) {
   #l-header {
     padding: 45px;
-  }
-  #l-header.is-fixed {
-    padding: 15px 45px 15px;
   }
 }
 
@@ -237,7 +230,13 @@ a[data-lightbox="lb"]:after {
 /* 1-3-1. #l-main
 -------------------------------------------------- */
 #l-main {
-  margin-top: 111px;
+  margin-top: 108px;
+}
+
+@media (min-width: 992px) {
+  #l-main {
+    margin-top: 171px;
+  }
 }
 
 /* 1-3-2. #l-sub
